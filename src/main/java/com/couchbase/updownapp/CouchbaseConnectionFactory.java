@@ -6,7 +6,7 @@ import com.couchbase.client.java.CouchbaseCluster;
 public class CouchbaseConnectionFactory {
 
     public static Bucket getDefaultConnection() {
-        return null;
+      return CouchbaseCluster.create().openBucket("default").toBlocking().single();
     }
 
 }
